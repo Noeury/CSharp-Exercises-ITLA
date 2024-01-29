@@ -6,12 +6,27 @@ using System.Threading.Tasks;
 
 namespace programa1
 {
-    internal class Club
+    public class Club
     {
-        Socio socio1 = new Socio("Jose", 2);
-        Socio socio2 = new Socio("Miguel", 3);
-        Socio socio3 = new Socio("Marcos", 1);
+        private List<Socio> socios;
 
+        public Club(List<Socio> socios)
+        {
+            this.socios = socios;
+        }
+
+        public void ImprimirSocioMasAntiguo()
+        {
+            if (socios.Count > 0)
+            {
+                Socio socioConMayorAntiguedad = socios.OrderByDescending(s => s.Antiguedad).First();
+                Console.WriteLine("El socio mas antiguo en el club es: " + socioConMayorAntiguedad.Nombre);
+            }
+            else
+            {
+                Console.WriteLine("El club no tiene socios.");
+            }
+        }
 
     }
 }

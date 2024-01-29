@@ -6,15 +6,28 @@ using System.Threading.Tasks;
 
 namespace programa1
 {
-    internal class Socio
+    public class Socio
     {
         private string nombre;
         private int antiguedad;
+
+        public string Nombre
+        {
+            get { return nombre; }
+        }
+
+        public int Antiguedad
+        {
+            get { return antiguedad; }
+        }
 
         public Socio(string nombre, int antiguedad)
         {
             this.nombre = nombre;
             this.antiguedad = antiguedad;
         }
+
+
+
     }
 }
